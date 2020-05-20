@@ -64,13 +64,13 @@ public class LeaveManagementPage extends PageBase{
         syscoLabUI.sendKeys(txtLeaveEmployee, Data.employeeName);
         syscoLabUI.sendKeys(txtEntitlement, Data.leaveEntitlement);
         syscoLabUI.click(btnLeaveSave);
-
         leaveEntitledEmployee = txtLeaveEntitledEmployee.getText();
         leaveType = drpLeaveType.getText();
         entitlementType = lblEntitlementType.getText();
         validFrom = lblValidFrom.getText();
         validTo =   lblValidTo.getText();
         days = lblDays.getText();
+
         return syscoLabUI.isDisplayed(lblLeaveEntitlements);
     }
 
@@ -108,6 +108,7 @@ public class LeaveManagementPage extends PageBase{
         syscoLabUI.click(btnLeave);
         leaveDateByAdmin = lblAppliedDate.getText();
         leaveEntitledEmployee = lblLeaveAppliedEmployee.getText();
+
         return syscoLabUI.isDisplayed(tblLeaveDetails);
     }
 

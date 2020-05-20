@@ -2,6 +2,8 @@ package com.sysco.UI_Automation_Orange.tests;
 
 import com.sysco.UI_Automation_Orange.function.OrangeLogin;
 import com.sysco.UI_Automation_Orange.utils.TestBase;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -11,6 +13,12 @@ import static com.sysco.UI_Automation_Orange.function.OrangeLogin.login;
 
 public class OrangeLoginTest extends TestBase {
     SoftAssert softAssert = new SoftAssert();
+@BeforeClass
+    public void initiate(ITestContext iTestContext) {
+
+        iTestContext.setAttribute("feature", "FeatureName - TestName");
+
+    }
 @Test
     public void testOrangeLoginPage() throws IOException {
 
@@ -26,5 +34,6 @@ public class OrangeLoginTest extends TestBase {
         OrangeLogin.verifyLogin();
         softAssert.assertEquals(login.loginHomePage(),true,"User successfully logged In");
         softAssert.assertAll();
+
 }
 }
